@@ -1,6 +1,6 @@
-package com.example.boardservice.web.repository;
+package com.example.board_practice.web.repository;
 
-import com.example.boardservice.web.domain.Post;
+import com.example.board_practice.web.domain.Post;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -13,11 +13,12 @@ public class PostRepositoryImpl implements PostRepository{
     private static final ConcurrentHashMap<Long, Post> store = new ConcurrentHashMap<>();
     private static AtomicLong sequence = new AtomicLong();
 
+
     @Override
-    public Status save(Post post) {
+    public Post save(Post post) {
         post.setId(sequence.incrementAndGet());
         store.put(post.getId(), post);
-        return Status.COMPLETE;
+        return post;
     }
 
     @Override
@@ -26,7 +27,15 @@ public class PostRepositoryImpl implements PostRepository{
     }
 
     @Override
-    public Status update() {
+    public Post update() {
         return null;
     }
+
+
+
+    //TestCode 목적
+    public void clearStore(){
+        store.clear();
+    }
+
 }

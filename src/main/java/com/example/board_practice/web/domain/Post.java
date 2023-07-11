@@ -1,4 +1,4 @@
-package com.example.boardservice.web.domain;
+package com.example.board_practice.web.domain;
 
 import lombok.Data;
 
@@ -13,8 +13,7 @@ public class Post {
     private String postContent;
     private Date date;
 
-    public Post(Long id, String postName, String postContent, Date date) {
-        this.id = id;
+    public Post(String postName, String postContent, Date date) {
         this.postName = postName;
         this.postContent = postContent;
         this.date = date;
