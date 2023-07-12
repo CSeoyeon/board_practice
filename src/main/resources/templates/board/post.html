@@ -12,7 +12,6 @@
 <body>
 <div class="container">
     <div class="py-5 text-center">
-        <h2 th:value="${post.postTitle}"></h2>
     </div>
     <div>
         <label for="postId">게시글 ID</label>
@@ -50,6 +49,15 @@
                  type="button">게시글 목록</button>
             </div>
         </div>
+        <div clas = "col">
+            <div class="w-100 btn btn-primary btn-lg"
+                 onclick="location.href='postList.html'"
+                 th:onclick="|location.href='@{/{postId}/delete(postId=${post.id})}'|"
+                 type="button">게시글 삭제</button>
+            </div>
+        </div>
+
+
     </div>
 
 

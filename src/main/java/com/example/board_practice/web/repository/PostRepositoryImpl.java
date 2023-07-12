@@ -39,8 +39,8 @@ public class PostRepositoryImpl implements PostRepository{
     }
 
     @Override
-    public void delete(Post post) {
-        store.remove(post.getId());
+    public void delete(Long postId) {
+        store.remove(postId);
     }
 
 

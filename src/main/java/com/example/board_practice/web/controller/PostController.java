@@ -11,7 +11,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import java.util.List;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("")
 @RequiredArgsConstructor
 public class PostController {
 
@@ -24,19 +24,19 @@ public class PostController {
         return "board/postList";
     }
 
-    @GetMapping("{postId}")
+    @GetMapping("/{postId}")
     public String Post(@PathVariable Long postId, Model model){
         Post post = postService.postMatch(postId);
         model.addAttribute("post", post);
         return "board/post";
     }
 
-    @GetMapping("addPost")
+    @GetMapping("/addPost")
     public String addPostForm(){
         return "board/addPost";
     }
 
-    @PostMapping("postList/addPost")
+    @PostMapping("/addPost")
     public String addPost(@ModelAttribute Post post, RedirectAttributes redirectAttributes){
         postService.addPost(post);
         redirectAttributes.addAttribute("postId", post.getId());
@@ -45,17 +45,23 @@ public class PostController {
     }
 
 
-    @GetMapping("{postId}/edit")
+    @GetMapping("/{postId}/edit")
     public String editForm(@PathVariable Long postId, Model model){
         Post post = postService.postMatch(postId);
         model.addAttribute("post", post);
         return "board/editPost";
     }
 
-    @PostMapping("{postId}/edit")
+    @PostMapping("/{postId}/edit")
     public String editPost(@PathVariable Long postId, @ModelAttribute Post post){
         postService.postUpdate(postId, post);
         return "redirect:/{postId}";
+    }
+
+    @GetMapping("/{postId}/delete")
+    public String deletePost(@PathVariable Long postId){
+        postService.postDelete(postId);
+        return "board/postList";
     }
 
 
