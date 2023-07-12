@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            max-width: 560px;
+        }
+    </style>
+<body>
+<div class="container">
+    <div class="py-5 text-center">
+        <h2>title</h2>
+    </div>
+    <div>
+        <label for="postId">게시글 ID</label>
+        <input type="text" id="postId" name="postId" class="form-control"
+                value="id1" readonly>
+    </div>
+    <div>
+        <label for="postTitle">Title</label>
+        <input type="text" id="postTitle" name="postId" class="form-control"
+               value="title1" readonly>
+    </div>
+    <div>
+        <label for="postContent">Content</label>
+        <input type="text" id="postContent" name="postId" class="form-control"
+               value="글1" readonly>
+    </div>
+    <div>
+        <label for="postDate">Date</label>
+        <input type="text" id="postDate" name="postId" class="form-control"
+               value="글1" readonly>
+    </div>
+    <hr class="my-4">
+    <div class="row">
+        <div clas = "col">
+            <div class="w-100 btn btn-primary btn-lg"
+                 onclick="location.href='editPost.html'" type="button">게시글 수정</button>
+            </div>
+        </div>
+        <div clas = "col">
+            <div class="w-100 btn btn-primary btn-lg"
+                 onclick="location.href='postList.html'" type="button">게시글 목록</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+
+
+
+
+</body>
+</html>

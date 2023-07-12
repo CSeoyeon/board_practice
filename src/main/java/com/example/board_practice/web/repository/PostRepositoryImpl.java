@@ -27,10 +27,21 @@ public class PostRepositoryImpl implements PostRepository{
     }
 
     @Override
-    public Post update() {
-        return null;
+    public void update(Long postId, Post updatedPost) {
+        Post findPost = findById(postId);
+        findPost.setPostTitle(updatedPost.getPostTitle());
+        findPost.setPostContent(updatedPost.getPostContent());
     }
 
+    @Override
+    public Post findById(Long postId) {
+        return store.get(postId);
+    }
+
+    @Override
+    public void delete(Post post) {
+        store.remove(post.getId());
+    }
 
 
     //TestCode 목적

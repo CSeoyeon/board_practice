@@ -9,12 +9,12 @@ import java.util.concurrent.atomic.AtomicLong;
 public class Post {
 
     private Long id;
-    private String postName;
+    private String postTitle;
     private String postContent;
     private Date date;
 
     public Post(String postName, String postContent, Date date) {
-        this.postName = postName;
+        this.postTitle = postName;
         this.postContent = postContent;
         this.date = date;
     }

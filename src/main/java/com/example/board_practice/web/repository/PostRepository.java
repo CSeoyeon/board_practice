@@ -8,7 +8,7 @@ import java.util.List;
 public interface PostRepository {
     public Post save(Post post);
     public List<Post> findAll();
-    public Post update();
-
-
+    public void update(Long id, Post updatedPost);
+    public Post findById(Long postId);
+    void delete(Post post);
 }

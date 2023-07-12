@@ -2,9 +2,41 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
     <title>게시판</title>
 </head>
 <body>
-으악
+<div class = "container" style="max-width: 1000px">
+    <div class = "py-5 text-center">
+        <h2>게시글</h2>
+    </div>
+    <div class = "row">
+        <div class ="col">
+            <button class = "btn btn-primary float-end"
+                    onclick="location.href='addPost.html'" type="button">게시글 작성</button>
+        </div>
+    </div>
+    <hr class = "my-4">
+    <div>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Date</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><a href="post.html">1</a></td>
+                <td><a href="post.html">title1</a></td>
+                <td><a href="post.html">content1</a></td>
+                <td>date1</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 </body>
 </html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/bootstrap.min.css/}"
+          href="../css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .container {
+            max-width: 560px;
+        }
+    </style>
+<body>
+<div class="container">
+    <div class="py-5 text-center">
+        <h2 th:value="${post.postTitle}"></h2>
+    </div>
+    <div>
+        <label for="postId">게시글 ID</label>
+        <input type="text" id="postId" name="postId" class="form-control"
+                value="id1" th:value="${post.id}" readonly>
+    </div>
+    <div>
+        <label for="postTitle">Title</label>
+        <input type="text" id="postTitle" name="postId" class="form-control"
+               value="title1" th:value="${post.postTitle}" readonly>
+    </div>
+    <div>
+        <label for="postContent">Content</label>
+        <input type="text" id="postContent" name="postId" class="form-control"
+               value="content1" th:value="${post.postContent}" readonly>
+    </div>
+    <div>
+        <label for="postDate">Date</label>
+        <input type="text" id="postDate" name="postId" class="form-control"
+               value="date1" th:value="${post.date}" readonly>
+    </div>
+    <hr class="my-4">
+    <div class="row">
+        <div clas = "col">
+            <div class="w-100 btn btn-primary btn-lg"
+                 onclick="location.href='editPost.html'"
+                 th:onclick="|location.href='@{/{postId}/edit(postId=${post.id})}'|"
+                 type="button">게시글 수정</button>
+            </div>
+        </div>
+        <div clas = "col">
+            <div class="w-100 btn btn-primary btn-lg"
+                 onclick="location.href='postList.html'"
+                 th:onclick="|location.href='@{/}'|"
+                 type="button">게시글 목록</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+
+
+
+
+</body>
+</html>
