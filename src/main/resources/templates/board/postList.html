@@ -32,7 +32,7 @@
             <tr th:each="post : ${posts}">
                 <td><a href="post.html" th:href="@{|/${post.id}|}" th:text="${post.id}">postId</a></td>
                 <td><a href="post.html" th:href="@{|/${post.id}|}" th:text="${post.postTitle}">postTitle</a></td>
-                <td>date1</td>
+                <td><a th:text="${post.date}">date</a></td>
             </tr>
             </tbody>
         </table>

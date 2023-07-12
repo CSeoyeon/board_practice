@@ -5,6 +5,7 @@ import com.example.board_practice.web.repository.PostRepositoryImpl;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
@@ -22,7 +23,7 @@ class PostRepositoryImplTest {
     @Test
     void save(){
         //given
-        Date date = new Date();
+        LocalDate date = LocalDate.now();
         Post post = new Post("postName", "1234", date);
         Post post2 = new  Post("postName", "1234", date);
 

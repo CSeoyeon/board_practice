@@ -8,6 +8,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 
 @Slf4j
@@ -21,6 +23,7 @@ public class PostService {
     }
 
     public void addPost(Post post){
+        post.setDate(setDate());
         postRepository.save(post);
     }
 
@@ -36,4 +39,8 @@ public class PostService {
         postRepository.delete(postId);
     }
 
+    public LocalDate setDate(){
+        LocalDate date = LocalDate.now();
+        return date;
+    }
 }
