@@ -42,8 +42,8 @@ public class BoardController {
 
     @GetMapping("/{boardId}")
     public String board(@PathVariable Long boardId, Model model){
-        Board board = boardService.boardMath(boardId);
-        model.addAttribute("board", board);
+        Board item = boardService.boardMath(boardId);
+        model.addAttribute("item", item);
         return "board/post";
     }
 
@@ -59,8 +59,8 @@ public class BoardController {
                             @ModelAttribute Board board,
                             RedirectAttributes redirectAttributes){
         boardService.update(boardId, board);
-        //redirectAttributes.addAttribute("boardId", board.getId());
-        //redirectAttributes.addFlashAttribute("status", true);
+        redirectAttributes.addAttribute("boardId", board.getId());
+        redirectAttributes.addFlashAttribute("status", true);
         return "redirect:/{boardId}";
     }
 
